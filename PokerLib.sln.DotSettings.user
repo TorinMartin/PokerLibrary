@@ -1,0 +1,19 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7a342e87_002Df641_002D4343_002D89af_002D96372e616824/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="IsFlush" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12ED5F79-2CAA-4E09-B5D6-6A5441173102::net8.0::PokerLibTests.Tests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12ED5F79-2CAA-4E09-B5D6-6A5441173102::net8.0::PokerLibTests.HandComparerTests.First_Hand_Wins&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12ED5F79-2CAA-4E09-B5D6-6A5441173102::net8.0::PokerLibTests.HandComparerTests.Second_Hand_Wins&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12ED5F79-2CAA-4E09-B5D6-6A5441173102::net8.0::PokerLibTests.HandComparerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12ED5F79-2CAA-4E09-B5D6-6A5441173102::net8.0::PokerLibTests.RankUtilTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12ED5F79-2CAA-4E09-B5D6-6A5441173102::net8.0::PokerLibTests.HandEvaluatorTests.Duplicate_Hands_Tie&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12ED5F79-2CAA-4E09-B5D6-6A5441173102::net8.0::PokerLibTests.HandEvaluatorTests.Higher_Pair_Ace_Wins&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12ED5F79-2CAA-4E09-B5D6-6A5441173102::net8.0::PokerLibTests.HandEvaluatorTests.Higher_Flush_Wins&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12ED5F79-2CAA-4E09-B5D6-6A5441173102::net8.0::PokerLibTests.HandEvaluatorTests.Flush_Beats_ThreeKind&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12ED5F79-2CAA-4E09-B5D6-6A5441173102::net8.0::PokerLibTests.HandEvaluatorTests.HighCard_Nine_Wins&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12ED5F79-2CAA-4E09-B5D6-6A5441173102::net8.0::PokerLibTests.HandEvaluatorTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12ED5F79-2CAA-4E09-B5D6-6A5441173102::net8.0::PokerLibTests.HandDealerTests.Test&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12ED5F79-2CAA-4E09-B5D6-6A5441173102::net8.0::PokerLibTests.HandDealerTests.Invalid_Hand_Size_Throws&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::12ED5F79-2CAA-4E09-B5D6-6A5441173102::net8.0::PokerLibTests.HandRankerTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
