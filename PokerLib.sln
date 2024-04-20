@@ -2,7 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokerLib", "PokerLib\PokerLib.csproj", "{EE53E224-A1D0-4CB8-BA44-EFF4DC81A456}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokerLibTests", "PokerLibTests\PokerLibTests.csproj", "{12ED5F79-2CAA-4E09-B5D6-6A5441173102}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokerLibTests-NUnit", "PokerLibTests-NUnit\PokerLibTests-NUnit.csproj", "{12ED5F79-2CAA-4E09-B5D6-6A5441173102}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokerLibTests-xUnit", "PokerLibTests-xUnit\PokerLibTests-xUnit.csproj", "{F0EA96F2-3E80-41D3-B725-1ECC004E95AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +20,9 @@ Global
 		{12ED5F79-2CAA-4E09-B5D6-6A5441173102}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12ED5F79-2CAA-4E09-B5D6-6A5441173102}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12ED5F79-2CAA-4E09-B5D6-6A5441173102}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0EA96F2-3E80-41D3-B725-1ECC004E95AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0EA96F2-3E80-41D3-B725-1ECC004E95AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0EA96F2-3E80-41D3-B725-1ECC004E95AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0EA96F2-3E80-41D3-B725-1ECC004E95AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

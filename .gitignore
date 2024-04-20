@@ -3,3 +3,7 @@ PokerLib/bin/
 PokerLib/obj/
 PokerLibTests/bin/
 PokerLibTests/obj/
+PokerLibTests-NUnit/bin/
+PokerLibTests-NUnit/obj/
+PokerLibTests-xUnit/bin/
+PokerLibTests-xUnit/obj/
