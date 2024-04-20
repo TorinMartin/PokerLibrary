@@ -15,5 +15,14 @@
     &lt;TestId&gt;NUnit3x::12ED5F79-2CAA-4E09-B5D6-6A5441173102::net8.0::PokerLibTests.HandDealerTests.Test&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::12ED5F79-2CAA-4E09-B5D6-6A5441173102::net8.0::PokerLibTests.HandDealerTests.Invalid_Hand_Size_Throws&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::12ED5F79-2CAA-4E09-B5D6-6A5441173102::net8.0::PokerLibTests.HandRankerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::F0EA96F2-3E80-41D3-B725-1ECC004E95AE::net8.0::xUnitTests.UnitTest1.Test1&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::F0EA96F2-3E80-41D3-B725-1ECC004E95AE::net8.0::xUnitTests.HandRankerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::F0EA96F2-3E80-41D3-B725-1ECC004E95AE::net8.0::PokerLibTests.HandEvaluatorTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::F0EA96F2-3E80-41D3-B725-1ECC004E95AE::net8.0::PokerLibTests.ComparerTests.Flush_Returns_HighCardComparer&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::F0EA96F2-3E80-41D3-B725-1ECC004E95AE::net8.0::PokerLibTests.ComparerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::F0EA96F2-3E80-41D3-B725-1ECC004E95AE::net8.0::PokerLibTests.HandTests.Highest_Card_Returned_Correctly&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::F0EA96F2-3E80-41D3-B725-1ECC004E95AE::net8.0::PokerLibTests.HandTests.Card_Removed_Successfully&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::F0EA96F2-3E80-41D3-B725-1ECC004E95AE::net8.0::PokerLibTests.HandDealerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::F0EA96F2-3E80-41D3-B725-1ECC004E95AE::net8.0::PokerLibTests.HandRankerTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
