@@ -15,15 +15,49 @@ public class HandRankerTests
         var comparerFactory = new ComparerFactory();
         _handRanker = new HandRanker(handEvaluator, comparerFactory);
     }
+
+    [Fact]
+    public void Pair_Beats_HighCard()
+    {
+        var pair = HandDealerMockGenerator.CreatePair().DealHand();
+        var highCard = HandDealerMockGenerator.CreateHighCard().DealHand();
+        var result = _handRanker.RankHands(pair, highCard);
+
+        result.Winner.Should().NotBeNull();
+        result.Winner.Should().Be(pair);
+    }
+
+    [Fact]
+    public void TwoPair_Beats_Pair()
+    {
+        var twoPair = HandDealerMockGenerator.CreateTwoPair().DealHand();
+        var pair = HandDealerMockGenerator.CreatePair().DealHand();
+        var result = _handRanker.RankHands(twoPair, pair);
+
+        result.Winner.Should().NotBeNull();
+        result.Winner.Should().Be(twoPair);
+    }
     
     [Fact]
     public void ThreeKind_Beats_Pair()
     {
-        var (pair, threeKind) = HandDealerMockGenerator.HigherPair().DealHands();
+        var threeKind = HandDealerMockGenerator.CreateThreeKind().DealHand();
+        var pair = HandDealerMockGenerator.CreatePair().DealHand();
         var result = _handRanker.RankHands(pair, threeKind);
 
         result.Winner.Should().NotBeNull();
         result.Winner.Should().Be(threeKind);
+    }
+    
+    [Fact]
+    public void Flush_Beats_ThreeKind()
+    {
+        var flush = HandDealerMockGenerator.CreateFlush().DealHand();
+        var threeKind = HandDealerMockGenerator.CreateThreeKind().DealHand();
+        var result = _handRanker.RankHands(threeKind, flush);
+        
+        result.Winner.Should().NotBeNull();
+        result.Winner.Should().Be(flush);
     }
     
     [Fact]
@@ -46,6 +80,7 @@ public class HandRankerTests
         result.Winner.Should().Be(higher);
     }
 
+    // poker-challenge.md test cases
     [Fact]
     public void HighCard_Ace_Wins()
     {
@@ -64,16 +99,6 @@ public class HandRankerTests
         
         result.Winner.Should().NotBeNull();
         result.Winner.Should().Be(higher);
-    }
-    
-    [Fact]
-    public void Flush_Beats_ThreeKind()
-    {
-        var (threeKind, flush) = HandDealerMockGenerator.FlushThreeKind().DealHands();
-        var result = _handRanker.RankHands(threeKind, flush);
-        
-        result.Winner.Should().NotBeNull();
-        result.Winner.Should().Be(flush);
     }
     
     [Fact]
