@@ -6,12 +6,105 @@ namespace PokerLibTests;
 
 public static class HandDealerMockGenerator
 {
-     private static IHandDealer CreateMockDealer(Func<List<ICard>> createFirst, Func<List<ICard>> createSecond)
+    private static IHandDealer CreateMockDealer(Func<List<ICard>> create)
+    {
+        var mock = new Mock<IHandDealer>();
+        mock.Setup(handDealer => handDealer.DealHand()).Returns(() => new Hand(create()));
+        
+        return mock.Object;
+    }
+    
+    private static IHandDealer CreateMockDealer(Func<List<ICard>> createFirst, Func<List<ICard>> createSecond)
     {
         var mock = new Mock<IHandDealer>();
         mock.Setup(handDealer => handDealer.DealHands()).Returns(() => (new Hand(createFirst()), new Hand(createSecond())));
         
         return mock.Object;
+    }
+
+    public static IHandDealer CreateInvalidHand()
+    {
+        var hand = () => new List<ICard>
+        {
+            new Card(CardSuit.Clubs, CardValue.Ace),
+            new Card(CardSuit.Clubs, CardValue.Ace),
+            new Card(CardSuit.Clubs, CardValue.Ace),
+            new Card(CardSuit.Clubs, CardValue.Ace),
+            new Card(CardSuit.Clubs, CardValue.Ace),
+            new Card(CardSuit.Clubs, CardValue.Ace)
+        };
+
+        return CreateMockDealer(hand);
+    }
+
+    public static IHandDealer CreateFlush()
+    {
+        var hand = () => new List<ICard>
+        {
+            new Card(CardSuit.Spades, CardValue.Two),
+            new Card(CardSuit.Spades, CardValue.Eight),
+            new Card(CardSuit.Spades, CardValue.Four),
+            new Card(CardSuit.Spades, CardValue.Queen),
+            new Card(CardSuit.Spades, CardValue.Three)
+        };
+
+        return CreateMockDealer(hand);
+    }
+    
+    public static IHandDealer CreateThreeKind()
+    {
+        var hand = () => new List<ICard>
+        {
+            new Card(CardSuit.Hearts, CardValue.Two),
+            new Card(CardSuit.Spades, CardValue.Four),
+            new Card(CardSuit.Clubs, CardValue.Four),
+            new Card(CardSuit.Diamonds, CardValue.Three),
+            new Card(CardSuit.Hearts, CardValue.Four)
+        };
+
+        return CreateMockDealer(hand);
+    }
+    
+    public static IHandDealer CreateTwoPair()
+    {
+        var hand = () => new List<ICard>
+        {
+            new Card(CardSuit.Clubs, CardValue.Ace),
+            new Card(CardSuit.Diamonds, CardValue.Ace),
+            new Card(CardSuit.Hearts, CardValue.Queen),
+            new Card(CardSuit.Clubs, CardValue.Queen),
+            new Card(CardSuit.Clubs, CardValue.Ten)
+        };
+
+        return CreateMockDealer(hand);
+    }
+    
+    public static IHandDealer CreatePair()
+    {
+        var hand = () => new List<ICard>
+        {
+            new Card(CardSuit.Hearts, CardValue.Two),
+            new Card(CardSuit.Diamonds, CardValue.Two),
+            new Card(CardSuit.Spades, CardValue.Five),
+            new Card(CardSuit.Clubs, CardValue.Nine),
+            new Card(CardSuit.Diamonds, CardValue.King)
+        };
+
+        return CreateMockDealer(hand);
+    }
+    
+    public static IHandDealer CreateHighCard()
+    {
+        var hand = () => new List<ICard>
+        {
+            new Card(CardSuit.Spades, CardValue.Two),
+            new Card(CardSuit.Diamonds, CardValue.Eight),
+            new Card(CardSuit.Spades, CardValue.Four),
+            new Card(CardSuit.Clubs, CardValue.Queen),
+            new Card(CardSuit.Spades, CardValue.Three)
+        };
+
+        return CreateMockDealer(hand);
     }
 
     public static IHandDealer FlushThreeKind()

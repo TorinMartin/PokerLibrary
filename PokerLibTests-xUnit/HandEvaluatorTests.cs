@@ -11,7 +11,7 @@ public class HandEvaluatorTests
     public void Is_Flush()
     {
         // Discard second hand from mock generator
-        var (hand, _) = HandDealerMockGenerator.HigherFlush().DealHands();
+        var hand = HandDealerMockGenerator.CreateFlush().DealHand();
         var result = _handEvaluator.EvaluateHand(hand);
 
         result.Should().Be(HandType.Flush);
@@ -20,7 +20,7 @@ public class HandEvaluatorTests
     [Fact]
     public void Is_Three_of_a_Kind()
     {
-        var (hand, _) = HandDealerMockGenerator.HigherThreeKind().DealHands();
+        var hand = HandDealerMockGenerator.CreateThreeKind().DealHand();
         var result = _handEvaluator.EvaluateHand(hand);
 
         result.Should().Be(HandType.ThreeKind);
@@ -29,7 +29,7 @@ public class HandEvaluatorTests
     [Fact]
     public void Is_Two_Pairs()
     {
-        var (hand, _) = HandDealerMockGenerator.HigherTwoPairs().DealHands();
+        var hand = HandDealerMockGenerator.CreateTwoPair().DealHand();
         var result = _handEvaluator.EvaluateHand(hand);
 
         result.Should().Be(HandType.TwoPairs);
@@ -38,7 +38,7 @@ public class HandEvaluatorTests
     [Fact]
     public void Is_Pair()
     {
-        var (hand, _) = HandDealerMockGenerator.HigherPair().DealHands();
+        var hand = HandDealerMockGenerator.CreatePair().DealHand();
         var result = _handEvaluator.EvaluateHand(hand);
         
         result.Should().Be(HandType.Pair);
@@ -47,7 +47,7 @@ public class HandEvaluatorTests
     [Fact]
     public void Is_High_Card()
     {
-        var (hand, _) = HandDealerMockGenerator.HighCardAce().DealHands();
+        var hand = HandDealerMockGenerator.CreateHighCard().DealHand();
         var result = _handEvaluator.EvaluateHand(hand);
 
         result.Should().Be(HandType.HighCard);

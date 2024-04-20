@@ -1,6 +1,4 @@
 ﻿using FluentAssertions;
-using Moq;
-using PokerLib.Cards;
 using PokerLib.Hands;
 
 namespace PokerLibTests;
@@ -22,26 +20,9 @@ public class HandDealerTests
     [Fact]
     public void Invalid_Hand_Size_Throws()
     {
-        var mock = new Mock<IHandDealer>();
-        mock.Setup(handDealer => handDealer.DealHand()).Returns(() =>
-        {
-            var cards = new List<ICard>()
-            {
-                new Card(CardSuit.Clubs, CardValue.Ace),
-                new Card(CardSuit.Clubs, CardValue.Ace),
-                new Card(CardSuit.Clubs, CardValue.Ace),
-                new Card(CardSuit.Clubs, CardValue.Ace),
-                new Card(CardSuit.Clubs, CardValue.Ace),
-                new Card(CardSuit.Clubs, CardValue.Ace)
-            };
+        var dealer = HandDealerMockGenerator.CreateInvalidHand();
 
-            return new Hand(cards);
-        });
-
-        var dealer = mock.Object;
-
-        dealer
-            .Invoking(d => d.DealHand())
+        dealer.Invoking(d => d.DealHand())
             .Should()
             .Throw<ArgumentException>();
     }
