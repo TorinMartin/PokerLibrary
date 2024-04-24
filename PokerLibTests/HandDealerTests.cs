@@ -16,6 +16,17 @@ public class HandDealerTests
 
         actual.Should().Be(expected);
     }
+
+    [Fact]
+    public void Dealer_Deals_Correct_Hand_Sizes()
+    {
+        const int expected = Hand.HandSize;
+        var dealer = new HandDealer();
+        var (first, second) = dealer.DealHands();
+
+        first.Cards.Count.Should().Be(expected);
+        second.Cards.Count.Should().Be(expected);
+    }
     
     [Fact]
     public void Invalid_Hand_Size_Throws()

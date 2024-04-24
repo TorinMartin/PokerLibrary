@@ -24,5 +24,6 @@
     &lt;TestId&gt;xUnit::F0EA96F2-3E80-41D3-B725-1ECC004E95AE::net8.0::PokerLibTests.HandTests.Card_Removed_Successfully&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::F0EA96F2-3E80-41D3-B725-1ECC004E95AE::net8.0::PokerLibTests.HandDealerTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::F0EA96F2-3E80-41D3-B725-1ECC004E95AE::net8.0::PokerLibTests.HandRankerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::F0EA96F2-3E80-41D3-B725-1ECC004E95AE::net8.0::PokerLibTests.DeckTests.Deck_Contains_52_Cards&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
