@@ -40,7 +40,7 @@ public class Hand : IComparable<Hand>
         var secondEval = other.Evaluate();
 
         // Clear winner, return with higher eval
-        if (firstEval != secondEval) return firstEval > secondEval ? -1 : 1;
+        if (firstEval != secondEval) return firstEval > secondEval ? 1 : -1;
 
         // Factory method to grab appropriate comparer class based on first hands evaluation (we know they are the same here).
         var comparer = _comparerFactory.Get(firstEval);

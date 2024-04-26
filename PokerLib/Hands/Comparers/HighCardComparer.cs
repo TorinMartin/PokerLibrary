@@ -19,6 +19,6 @@ public class HighCardComparer : IComparer
         
         if (firstHighest == secondHighest) return 0;
         
-        return firstHighest?.Value > secondHighest?.Value ? -1 : 1;
+        return firstHighest?.Value > secondHighest?.Value ? 1 : -1;
     }
 }

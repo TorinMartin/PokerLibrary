@@ -7,6 +7,6 @@ public class ThreeKindComparer : BaseComparer
         var (firstHighest, secondHighest) = GetHighestPairs(first, second, 3);
         if (firstHighest == secondHighest) return 0;
 
-        return firstHighest > secondHighest ? -1 : 1;
+        return firstHighest > secondHighest ? 1 : -1;
     }
 }

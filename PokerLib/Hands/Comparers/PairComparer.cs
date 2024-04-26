@@ -7,6 +7,6 @@ public class PairComparer : BaseComparer
         var (firstHighestPair, secondHighestPair) = GetHighestPairs(first, second, 2);
         if (firstHighestPair == secondHighestPair) return 0;
 
-        return firstHighestPair > secondHighestPair ? -1 : 1;
+        return firstHighestPair > secondHighestPair ? 1 : -1;
     }
 }
