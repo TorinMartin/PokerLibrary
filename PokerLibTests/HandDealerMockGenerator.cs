@@ -6,7 +6,7 @@ namespace PokerLibTests;
 
 public static class HandDealerMockGenerator
 {
-    private static IHandDealer CreateMockDealer(Func<List<ICard>> create)
+    private static IHandDealer CreateMockDealer(Func<List<Card>> create)
     {
         var mock = new Mock<IHandDealer>();
         mock.Setup(handDealer => handDealer.DealHand()).Returns(() => new Hand(create()));
@@ -14,7 +14,7 @@ public static class HandDealerMockGenerator
         return mock.Object;
     }
     
-    private static IHandDealer CreateMockDealer(Func<List<ICard>> createFirst, Func<List<ICard>> createSecond)
+    private static IHandDealer CreateMockDealer(Func<List<Card>> createFirst, Func<List<Card>> createSecond)
     {
         var mock = new Mock<IHandDealer>();
         mock.Setup(handDealer => handDealer.DealHands()).Returns(() => (new Hand(createFirst()), new Hand(createSecond())));
@@ -24,7 +24,7 @@ public static class HandDealerMockGenerator
 
     public static IHandDealer CreateInvalidHand()
     {
-        var hand = () => new List<ICard>
+        var hand = () => new List<Card>
         {
             new Card(CardSuit.Clubs, CardValue.Ace),
             new Card(CardSuit.Clubs, CardValue.Ace),
@@ -39,7 +39,7 @@ public static class HandDealerMockGenerator
 
     public static IHandDealer CreateFlush()
     {
-        var hand = () => new List<ICard>
+        var hand = () => new List<Card>
         {
             new Card(CardSuit.Spades, CardValue.Two),
             new Card(CardSuit.Spades, CardValue.Eight),
@@ -53,7 +53,7 @@ public static class HandDealerMockGenerator
     
     public static IHandDealer CreateThreeKind()
     {
-        var hand = () => new List<ICard>
+        var hand = () => new List<Card>
         {
             new Card(CardSuit.Hearts, CardValue.Two),
             new Card(CardSuit.Spades, CardValue.Four),
@@ -67,7 +67,7 @@ public static class HandDealerMockGenerator
     
     public static IHandDealer CreateTwoPair()
     {
-        var hand = () => new List<ICard>
+        var hand = () => new List<Card>
         {
             new Card(CardSuit.Clubs, CardValue.Ace),
             new Card(CardSuit.Diamonds, CardValue.Ace),
@@ -81,7 +81,7 @@ public static class HandDealerMockGenerator
     
     public static IHandDealer CreatePair()
     {
-        var hand = () => new List<ICard>
+        var hand = () => new List<Card>
         {
             new Card(CardSuit.Hearts, CardValue.Two),
             new Card(CardSuit.Diamonds, CardValue.Two),
@@ -95,7 +95,7 @@ public static class HandDealerMockGenerator
     
     public static IHandDealer CreateHighCard()
     {
-        var hand = () => new List<ICard>
+        var hand = () => new List<Card>
         {
             new Card(CardSuit.Spades, CardValue.Two),
             new Card(CardSuit.Diamonds, CardValue.Eight),
@@ -109,7 +109,7 @@ public static class HandDealerMockGenerator
 
     public static IHandDealer FlushThreeKind()
     {
-        var first = () => new List<ICard>
+        var first = () => new List<Card>
         {
             new Card(CardSuit.Hearts, CardValue.Two),
             new Card(CardSuit.Spades, CardValue.Four),
@@ -118,7 +118,7 @@ public static class HandDealerMockGenerator
             new Card(CardSuit.Hearts, CardValue.Four)
         };
 
-        var second = () => new List<ICard>
+        var second = () => new List<Card>
         {
             new Card(CardSuit.Spades, CardValue.Two),
             new Card(CardSuit.Spades, CardValue.Eight),
@@ -132,7 +132,7 @@ public static class HandDealerMockGenerator
     
     public static IHandDealer HigherFlush()
     {
-        var first = () => new List<ICard>
+        var first = () => new List<Card>
         {
             new Card(CardSuit.Clubs, CardValue.Three),
             new Card(CardSuit.Clubs, CardValue.Seven),
@@ -141,7 +141,7 @@ public static class HandDealerMockGenerator
             new Card(CardSuit.Clubs, CardValue.Four)
         };
 
-        var second = () => new List<ICard>
+        var second = () => new List<Card>
         {
             new Card(CardSuit.Spades, CardValue.Two),
             new Card(CardSuit.Spades, CardValue.Eight),
@@ -155,7 +155,7 @@ public static class HandDealerMockGenerator
 
     public static IHandDealer HigherThreeKind()
     {
-        var first = () => new List<ICard>
+        var first = () => new List<Card>
         {
             new Card(CardSuit.Clubs, CardValue.Ace),
             new Card(CardSuit.Diamonds, CardValue.Ace),
@@ -164,7 +164,7 @@ public static class HandDealerMockGenerator
             new Card(CardSuit.Clubs, CardValue.Ten)
         };
 
-        var second = () => new List<ICard>
+        var second = () => new List<Card>
         {
             new Card(CardSuit.Clubs, CardValue.Queen),
             new Card(CardSuit.Diamonds, CardValue.Queen),
@@ -178,7 +178,7 @@ public static class HandDealerMockGenerator
 
     public static IHandDealer HigherTwoPairs()
     {
-        var first = () => new List<ICard>
+        var first = () => new List<Card>
         {
             new Card(CardSuit.Clubs, CardValue.Ace),
             new Card(CardSuit.Diamonds, CardValue.Ace),
@@ -187,7 +187,7 @@ public static class HandDealerMockGenerator
             new Card(CardSuit.Clubs, CardValue.Ten)
         };
 
-        var second = () => new List<ICard>
+        var second = () => new List<Card>
         {
             new Card(CardSuit.Clubs, CardValue.Jack),
             new Card(CardSuit.Diamonds, CardValue.Jack),
@@ -201,7 +201,7 @@ public static class HandDealerMockGenerator
     
     public static IHandDealer HigherPair()
     {
-        var first = () => new List<ICard>
+        var first = () => new List<Card>
         {
             new Card(CardSuit.Clubs, CardValue.Two),
             new Card(CardSuit.Spades, CardValue.Two),
@@ -210,7 +210,7 @@ public static class HandDealerMockGenerator
             new Card(CardSuit.Clubs, CardValue.Four)
         };
 
-        var second = () => new List<ICard>
+        var second = () => new List<Card>
         {
             new Card(CardSuit.Hearts, CardValue.Ace),
             new Card(CardSuit.Diamonds, CardValue.Ace),
@@ -224,7 +224,7 @@ public static class HandDealerMockGenerator
     
     public static IHandDealer HighCardAce()
     {
-        var first = () => new List<ICard>
+        var first = () => new List<Card>
         {
             new Card(CardSuit.Hearts, CardValue.Two),
             new Card(CardSuit.Diamonds, CardValue.Three),
@@ -233,7 +233,7 @@ public static class HandDealerMockGenerator
             new Card(CardSuit.Diamonds, CardValue.King)
         };
 
-        var second = () => new List<ICard>
+        var second = () => new List<Card>
         {
             new Card(CardSuit.Clubs, CardValue.Two),
             new Card(CardSuit.Hearts, CardValue.Three),
@@ -247,7 +247,7 @@ public static class HandDealerMockGenerator
     
     public static IHandDealer HighCardNine()
     {
-        var first = () => new List<ICard>
+        var first = () => new List<Card>
         {
             new Card(CardSuit.Hearts, CardValue.Two),
             new Card(CardSuit.Diamonds, CardValue.Three),
@@ -256,7 +256,7 @@ public static class HandDealerMockGenerator
             new Card(CardSuit.Diamonds, CardValue.King)
         };
 
-        var second = () => new List<ICard>
+        var second = () => new List<Card>
         {
             new Card(CardSuit.Clubs, CardValue.Two),
             new Card(CardSuit.Hearts, CardValue.Three),
@@ -270,7 +270,7 @@ public static class HandDealerMockGenerator
     
     public static IHandDealer Tie()
     {
-        var first = () => new List<ICard>
+        var first = () => new List<Card>
         {
             new Card(CardSuit.Hearts, CardValue.Two),
             new Card(CardSuit.Diamonds, CardValue.Three),
@@ -279,7 +279,7 @@ public static class HandDealerMockGenerator
             new Card(CardSuit.Diamonds, CardValue.King)
         };
 
-        var second = () => new List<ICard>
+        var second = () => new List<Card>
         {
             new Card(CardSuit.Diamonds, CardValue.Two),
             new Card(CardSuit.Hearts, CardValue.Three),

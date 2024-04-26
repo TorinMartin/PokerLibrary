@@ -1,4 +1,5 @@
 ﻿using PokerLib.Hands;
+using PokerLib.Hands.Comparers;
 
 namespace PokerLib.Ranking.Comparers;
 

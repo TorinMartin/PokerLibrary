@@ -1,10 +1,8 @@
-﻿using PokerLib.Hands;
-
-namespace PokerLib.Ranking.Comparers;
+﻿namespace PokerLib.Hands.Comparers;
 
 public class HighCardComparer : IComparer
 {
-    public RankResult Compare(IHand first, IHand second)
+    public int Compare(Hand first, Hand second)
     {
         var firstHighest = first.GetHighestCard();
         var secondHighest = second.GetHighestCard();
@@ -19,9 +17,8 @@ public class HighCardComparer : IComparer
             secondHighest = second.GetHighestCard();
         }
         
-        if (firstHighest == secondHighest) return new RankResult(true);
+        if (firstHighest == secondHighest) return 0;
         
-        var winner = firstHighest?.Value > secondHighest?.Value ? first : second;
-        return new RankResult(Winner: winner);
+        return firstHighest?.Value > secondHighest?.Value ? -1 : 1;
     }
 }

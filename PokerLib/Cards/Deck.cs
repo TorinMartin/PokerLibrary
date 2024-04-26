@@ -4,21 +4,21 @@ public interface IDeck
 {
     public int Count();
     public void Shuffle();
-    public ICard PullCard();
+    public Card PullCard();
 }
 
 public class Deck : IDeck
 {
-    private Stack<ICard> _deck;
+    private Stack<Card> _deck;
 
-    private Deck(IEnumerable<ICard> cards)
+    private Deck(IEnumerable<Card> cards)
     {
-        _deck = new Stack<ICard>(cards);
+        _deck = new Stack<Card>(cards);
     }
 
-    private static IEnumerable<ICard> CreateSuit(CardSuit suit)
+    private static IEnumerable<Card> CreateSuit(CardSuit suit)
     {
-        var set = new List<ICard>();
+        var set = new List<Card>();
 
         var cardCount = Enum.GetNames(typeof(CardValue)).Length;
         for (var i = 1; i <= cardCount; i++)
@@ -29,11 +29,11 @@ public class Deck : IDeck
         return set;
     }
     
-    private static IEnumerable<ICard> Shuffle(IEnumerable<ICard> cards) => cards.OrderBy(c => Guid.NewGuid()).ToList();
+    private static IEnumerable<Card> Shuffle(IEnumerable<Card> cards) => cards.OrderBy(c => Guid.NewGuid()).ToList();
 
     public static Deck CreateAndShuffle()
     {
-        var cards = new List<ICard>();
+        var cards = new List<Card>();
 
         var suitCount = Enum.GetNames(typeof(CardSuit)).Length;
         for (var i = 1; i <= suitCount; i++)
@@ -46,11 +46,11 @@ public class Deck : IDeck
     
     public void Shuffle()
     {
-        var cards = new List<ICard>(_deck.ToArray());
-        _deck = new Stack<ICard>(Shuffle(cards));
+        var cards = new List<Card>(_deck.ToArray());
+        _deck = new Stack<Card>(Shuffle(cards));
     }
 
-    public ICard PullCard() => _deck.Pop();
+    public Card PullCard() => _deck.Pop();
 
     public int Count() => _deck.Count;
 }

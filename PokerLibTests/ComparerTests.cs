@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using PokerLib.Hands;
+using PokerLib.Hands.Comparers;
 using PokerLib.Ranking.Comparers;
 
 namespace PokerLibTests;
