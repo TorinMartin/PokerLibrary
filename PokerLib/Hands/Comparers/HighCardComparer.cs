@@ -1,8 +1,8 @@
 ﻿namespace PokerLib.Hands.Comparers;
 
-public class HighCardComparer : IComparer
+public class HighCardComparer : BaseComparer
 {
-    public int Compare(Hand first, Hand second)
+    protected override int CompareHands(Hand first, Hand second)
     {
         var firstHighest = first.GetHighestCard();
         var secondHighest = second.GetHighestCard();

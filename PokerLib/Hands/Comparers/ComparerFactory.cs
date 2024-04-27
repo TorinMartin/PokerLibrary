@@ -1,16 +1,13 @@
-﻿using PokerLib.Hands;
-using PokerLib.Hands.Comparers;
-
-namespace PokerLib.Ranking.Comparers;
+﻿namespace PokerLib.Hands.Comparers;
 
 public interface IComparerFactory
 {
-    public IComparer Get(HandType handType);
+    public IComparer<Hand> Get(HandType handType);
 }
 
 public class ComparerFactory : IComparerFactory
 {
-    public IComparer Get(HandType handType) => handType switch
+    public IComparer<Hand> Get(HandType handType) => handType switch
     {
         HandType.HighCard or HandType.Flush => new HighCardComparer(),
         HandType.Pair or HandType.TwoPairs => new PairComparer(),

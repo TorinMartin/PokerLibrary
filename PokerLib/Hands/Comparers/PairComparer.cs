@@ -2,7 +2,7 @@
 
 public class PairComparer : BaseComparer
 {
-    public override int Compare(Hand first, Hand second)
+    protected override int CompareHands(Hand first, Hand second)
     {
         var (firstHighestPair, secondHighestPair) = GetHighestPairs(first, second, 2);
         if (firstHighestPair == secondHighestPair) return 0;

@@ -171,6 +171,6 @@ public class HandTests
     {
         var (first, second) = HandDealerMockGenerator.Tie().DealHands();
 
-        first.Should().BeEquivalentTo(second);
+        first.CompareTo(second).Should().Be(0);
     }
 }

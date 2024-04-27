@@ -2,7 +2,7 @@
 
 public class ThreeKindComparer : BaseComparer
 {
-    public override int Compare(Hand first, Hand second)
+    protected override int CompareHands(Hand first, Hand second)
     {
         var (firstHighest, secondHighest) = GetHighestPairs(first, second, 3);
         if (firstHighest == secondHighest) return 0;
