@@ -1,4 +1,7 @@
-﻿namespace PokerLib.Cards;
+﻿using PokerLib.Cards;
+using PokerLib.Decks.Exception;
+
+namespace PokerLib.Decks;
 
 public interface IDeck
 {
@@ -50,7 +53,8 @@ public class Deck : IDeck
         _deck = new Stack<Card>(Shuffle(cards));
     }
 
-    public Card PullCard() => _deck.Pop();
+    public Card PullCard() => _deck.Count > 0 ? _deck.Pop() : throw new DeckEmptyException("No remaining cards in deck");
 
     public int Count() => _deck.Count;
 }
+

@@ -1,4 +1,4 @@
-﻿using PokerLib.Cards;
+﻿using PokerLib.Decks;
 using PokerLib.Hands.Comparers;
 
 namespace PokerLib.Hands;
