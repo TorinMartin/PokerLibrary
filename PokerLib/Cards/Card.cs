@@ -1,12 +1,6 @@
 ﻿namespace PokerLib.Cards;
 
-public interface ICard
-{
-    public CardSuit Suit { get; init; }
-    public CardValue Value { get; init; }
-}
-
-public class Card : ICard
+public class Card
 {
     public CardSuit Suit { get; init; }
     public CardValue Value { get; init; }

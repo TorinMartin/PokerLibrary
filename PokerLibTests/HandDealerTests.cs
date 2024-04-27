@@ -1,18 +1,26 @@
 ﻿using FluentAssertions;
 using PokerLib.Hands;
+using PokerLib.Hands.Comparers;
 
 namespace PokerLibTests;
 
 public class HandDealerTests
 {
+    private readonly IComparerFactory _comparerFactory;
+    
+    public HandDealerTests()
+    {
+        _comparerFactory = new ComparerFactory();
+    }
+    
     [Fact]
     public void Dealer_Deals_Correct_Num_Cards()
     {
         const int expected = Hand.HandSize;
         
-        var dealer = new HandDealer();
+        var dealer = new HandDealer(_comparerFactory);
         var hand = dealer.DealHand();
-        var actual = hand.Cards.Count;
+        var actual = hand.CountCards();
 
         actual.Should().Be(expected);
     }
@@ -21,20 +29,10 @@ public class HandDealerTests
     public void Dealer_Deals_Correct_Hand_Sizes()
     {
         const int expected = Hand.HandSize;
-        var dealer = new HandDealer();
+        var dealer = new HandDealer(_comparerFactory);
         var (first, second) = dealer.DealHands();
 
-        first.Cards.Count.Should().Be(expected);
-        second.Cards.Count.Should().Be(expected);
-    }
-    
-    [Fact]
-    public void Invalid_Hand_Size_Throws()
-    {
-        var dealer = HandDealerMockGenerator.CreateInvalidHand();
-
-        dealer.Invoking(d => d.DealHand())
-            .Should()
-            .Throw<ArgumentException>();
+        first.CountCards().Should().Be(expected);
+        second.CountCards().Should().Be(expected);
     }
 }

@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using PokerLib.Cards;
+using PokerLib.Decks;
 
 namespace PokerLibTests;
 
